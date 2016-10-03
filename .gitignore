@@ -1,5 +1,7 @@
-app/*.js
-app/*/*.js
-*.map
+*.js
+*.js.map
 node_modules
 typings
+
+!karma*.js
+!system.config.js
