@@ -1,23 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavBarLink } from '../../models/nav-bar-link';
+import { NavBarService } from '../../services/nav-bar/nav-bar.service';
 
 @Component({
     selector: 'nav-bar',
+    providers: [NavBarService],
     moduleId: module.id,
     templateUrl: 'nav-bar.template.html'
 })
 export class NavBarComponent {
-  // links = [
-  //   {id: 1, description: 'About'},
-  //   {id: 2, description: 'Bands'},
-  //   {id: 3, description: 'Register band'}
-  // ];
+  constructor(private navBarService: NavBarService) { }
 
-  links: NavBarLink[] = [
-      new NavBarLink(1, 'About', 'about_link'),
-      new NavBarLink(2, 'Bands', 'band_link'),
-      new NavBarLink(3, 'Register band', 'register_band_link')
-  ];
+  links: NavBarLink[];
 
+  getLinks(): void {
+      this.links = this.navBarService.getNavBarLinks();
+  }
 
+  ngOnInit(): void {
+    this.getLinks();
+  }
 }
