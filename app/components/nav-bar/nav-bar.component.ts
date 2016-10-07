@@ -9,12 +9,13 @@ import { NavBarService } from '../../services/nav-bar/nav-bar.service';
     templateUrl: 'nav-bar.template.html'
 })
 export class NavBarComponent {
-  constructor(private navBarService: NavBarService) { }
+  constructor(private _navBarService: NavBarService) { }
 
   links: NavBarLink[];
 
   getLinks(): void {
-      this.links = this.navBarService.getNavBarLinks();
+      //this.links = this._navBarService.getNavBarLinks();
+      this._navBarService.getNavBarLinks().then(data => this.links = data);
   }
 
   ngOnInit(): void {

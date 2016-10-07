@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "description": "About this site",
+    "route": "about_link"
+  },
+  {
+    "id": 2,
+    "description": "Bands",
+    "route": "band_link"
+  },
+  {
+    "id": 3,
+    "description": "Register",
+    "route": "register_link"
+  }
+]
