@@ -14,7 +14,6 @@ export class NavBarComponent {
   links: NavBarLink[];
 
   getLinks(): void {
-      //this.links = this._navBarService.getNavBarLinks();
       this._navBarService.getNavBarLinks().then(data => this.links = data);
   }
 
