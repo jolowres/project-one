@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Flaxen Hill",
+    "genre": "Folk rock"
+  },
+  {
+    "id": 2,
+    "name": "Wonston Churchill",
+    "genre": "Indie rock"
+  },
+  {
+    "id": 3,
+    "name": "Reginald Chunder",
+    "genre": "Punk rock and blues"
+  }
+]

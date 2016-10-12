@@ -1,19 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
+import { Band } from '../../models/band';
+import { BandService } from '../../services/band/band.service';
 
 @Component({
     selector: 'bands',
-    providers: [],
+    providers: [BandService],
     moduleId: module.id,
     templateUrl: 'bands.template.html'
 })
 export class BandsComponent {
-    constructor() { }
+    constructor(private _bandService: BandService) { }
 
-    links: any[];
+    bands: Band[];
 
     getBands(): void {
-        //do nothing for now
+        this._bandService.getBands()
+            .subscribe((bands) => this.bands = bands);
     }
 
     ngOnInit(): void {
