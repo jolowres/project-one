@@ -37,9 +37,11 @@ describe('BandsComponent Tests', () => {
         expect(1).toBe(1);
     });
 
-    it('should return a band length of one when ngInit is called', () => {
+    it('should return the bands when ngInit is called', () => {
         bandsComponent.ngOnInit();
         expect(bandsComponent.bands.length).toBe(1);
+        expect(bandsComponent.bands[0].id).toBe(99);
+        expect(bandsComponent.bands[0].name).toBe('test band');
     });
 
 });
