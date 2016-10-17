@@ -17,7 +17,7 @@ export class BandService {
             .map((response: Response) => {
                 let bands = [];
                 for(let band of response.json()) {
-                    bands.push(new Band(band.id, band.name, band.route));
+                    bands.push(new Band(band.id, band.name, band.genre));
                 }
                 return bands;
             });
