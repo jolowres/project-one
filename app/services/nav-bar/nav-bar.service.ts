@@ -3,15 +3,17 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
+import { Urls } from '../../constants/urls.constants';
 import { NavBarLink } from '../../models/nav-bar-link';
 
 @Injectable()
 export class NavBarService {
-    constructor(private _http: Http) { }
+    constructor(private _http: Http,
+                private _urls: Urls) { }
 
     getNavBarLinks():Promise<NavBarLink[]> {
 
-        return this._http.get('data/nav-bar-links.json')
+        return this._http.get(this._urls.NAV_BAR_LINKS)
             .toPromise()
             .then(response => {
                 let navLinks = [];

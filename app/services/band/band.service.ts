@@ -4,11 +4,13 @@ import { Observable } from 'rxjs';
 
 import 'rxjs/add/operator/map';
 
+import { Urls } from '../../constants/urls.constants';
 import { Band } from '../../models/band';
 
 @Injectable()
 export class BandService {
-    constructor(private _http: Http) { }
+    constructor(private _http: Http,
+                private _urls: Urls) { }
 
     getBands():Observable<Band[]> {
         return this._http
@@ -20,8 +22,8 @@ export class BandService {
                     bands.push(new Band(band.id, band.name, band.genre));
                 }
                 return bands;
-            });
-            //.catch(this.handleError);
+            })
+            .catch(this.handleError);
 
     }
 

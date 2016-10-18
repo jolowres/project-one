@@ -3,6 +3,7 @@ import { MockBackend } from '@angular/http/testing';
 import { Http, ConnectionBackend, BaseRequestOptions, Response, ResponseOptions } from '@angular/http';
 
 import { BandService } from './band.service';
+import { Urls } from '../../constants/urls.constants';
 
 describe('BandService tests', () => {
     beforeEach(() => {
@@ -11,6 +12,7 @@ describe('BandService tests', () => {
                 BaseRequestOptions,
                 MockBackend,
                 BandService,
+                Urls,
                 {provide: Http,
                 useFactory: (backend: ConnectionBackend, defaultOptions: BaseRequestOptions) => {
                     return new Http(backend, defaultOptions);
