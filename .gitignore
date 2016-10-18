@@ -3,6 +3,7 @@
 node_modules
 typings
 .idea
+*.log
 
 !karma*.js
 !system.config.js
