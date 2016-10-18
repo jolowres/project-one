@@ -23,7 +23,6 @@ export class BandService {
                 }
                 return bands;
             })
-            .catch(this.handleError);
 
     }
 
