@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Rx';
 
 class MockBandService extends BandService{
     constructor() {
-        super(null);
+        super(null, null);
     }
     getBands() {
         console.log('retun fake bands');

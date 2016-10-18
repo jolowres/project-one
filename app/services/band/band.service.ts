@@ -14,21 +14,15 @@ export class BandService {
 
     getBands():Observable<Band[]> {
         return this._http
-            .get('data/bands.json')
-            //.map((response: Response) => response.json() as Band[]);
+            .get(this._urls.BANDS)
             .map((response: Response) => {
                 let bands = [];
                 for(let band of response.json()) {
                     bands.push(new Band(band.id, band.name, band.genre));
                 }
                 return bands;
-            })
+            });
 
-    }
-
-    private handleError(error: any): Promise<any> {
-        console.error('An error occurred', error); // for demo purposes only
-        return Promise.reject(error.message || error);
     }
 
 }
