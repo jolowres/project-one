@@ -2,20 +2,22 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule }    from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { Urls } from './constants/urls.constants';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HomeComponent } from './components/home/home.component';
 import { BandsComponent } from './components/bands/bands.component';
+import { BandComponent } from './components/band/band.component';
 
 import { NavBarLink } from './models/nav-bar-link';
-
 
 @NgModule({
     imports: [
         BrowserModule,
         HttpModule,
+        FormsModule,
         RouterModule.forRoot([
             {
                 path: '',
@@ -29,6 +31,10 @@ import { NavBarLink } from './models/nav-bar-link';
             {
                 path: 'bands',
                 component: BandsComponent
+            },
+            {
+                path: 'band',
+                component: BandComponent
             }
         ])
     ],
@@ -36,7 +42,8 @@ import { NavBarLink } from './models/nav-bar-link';
         AppComponent,
         HomeComponent,
         NavBarComponent,
-        BandsComponent
+        BandsComponent,
+        BandComponent
     ],
     providers: [Urls],
     bootstrap: [AppComponent]
