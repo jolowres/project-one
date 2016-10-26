@@ -11,13 +11,15 @@ import {Band} from "../../models/band";
 })
 
 export class BandComponent implements OnInit{
-    constructor (private _bandService: BandService) {}
+    constructor () {}
 
-    @Input band: Band;
+    @Input() band: Band;
 
     ngOnInit(): void {
-        this.band = new Band(null, null, null); //TODO we don;t want to do this - sort out the models
+        this.band = new Band();
     }
+
+    //TODO save button add band
 
 }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
 import { Band } from '../../models/band';
@@ -12,7 +13,10 @@ import { BandService } from '../../services/band/band.service';
     styleUrls: [ 'bands.component.css' ]
 })
 export class BandsComponent {
-    constructor(private _bandService: BandService) { }
+    constructor(
+        private _bandService: BandService,
+        private _router: Router
+    ) {}
 
     bands: Band[];
 
@@ -22,7 +26,7 @@ export class BandsComponent {
     }
 
     buttonClick(): void {
-        alert('button clicked');
+        this._router.navigate(['../band']);
     }
 
     ngOnInit(): void {

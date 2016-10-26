@@ -6,6 +6,13 @@ import { BandService } from '../../services/band/band.service';
 import { Band } from '../../models/band';
 
 import { Observable } from 'rxjs/Rx';
+import {BandComponent} from "../band/band.component";
+import {RouterStub} from "../../../testing/router-stubs";
+
+var mockBand = new Band();
+mockBand.id = 99;
+mockBand.name = 'test band';
+mockBand.genre = 'test genre';
 
 class MockBandService extends BandService{
     constructor() {
@@ -13,9 +20,7 @@ class MockBandService extends BandService{
     }
     getBands() {
         console.log('retun fake bands');
-        return Observable.of([
-                new Band(99, 'test band', 'test genre')
-        ]);
+        return Observable.of([mockBand]);
     }
 }
 
@@ -29,7 +34,7 @@ describe('BandsComponent Tests', () => {
     });
 
     beforeEach(() => {
-        bandsComponent = new BandsComponent(mockBandService);
+        bandsComponent = new BandsComponent(mockBandService, );
     });
 
     //smoke test

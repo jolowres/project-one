@@ -18,7 +18,7 @@ export class NavBarService {
             .then(response => {
                 let navLinks = [];
                 for(let navLink of response.json()) {
-                    navLinks.push(new NavBarLink(navLink.id, navLink.description, navLink.route));
+                    navLinks.push(navLink);
                 }
                 return navLinks;
             })
