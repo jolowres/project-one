@@ -12,7 +12,6 @@ export class NavBarService {
                 private _urls: Urls) { }
 
     getNavBarLinks():Promise<NavBarLink[]> {
-
         return this._http.get(this._urls.NAV_BAR_LINKS)
             .toPromise()
             .then(response => {
@@ -23,7 +22,6 @@ export class NavBarService {
                 return navLinks;
             })
             .catch(this.handleError);
-
     }
 
     private handleError(error: any): Promise<any> {

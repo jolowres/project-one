@@ -21,6 +21,7 @@ export class BandsComponent {
     bands: Band[];
 
     getBands(): void {
+        //this._bandService.getBands().then(data => this.bands = data);
         this._bandService.getBands()
             .subscribe((bands) => this.bands = bands);
     }

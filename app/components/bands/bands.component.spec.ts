@@ -34,7 +34,7 @@ describe('BandsComponent Tests', () => {
     });
 
     beforeEach(() => {
-        bandsComponent = new BandsComponent(mockBandService, );
+        bandsComponent = new BandsComponent(mockBandService, null);
     });
 
     //smoke test
