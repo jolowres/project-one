@@ -8,7 +8,7 @@ import { NavBarService } from '../../services/nav-bar/nav-bar.service';
     moduleId: module.id,
     templateUrl: 'nav-bar.template.html'
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit{
   constructor(private _navBarService: NavBarService) { }
 
   links: NavBarLink[];

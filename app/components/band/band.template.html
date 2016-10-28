@@ -3,7 +3,10 @@
 
 <div>
     Band name: <input id="name" type="text" [(ngModel)]="band.name"/>
-    Band genre: <input id="genre" type="text" [(ngModel)]="band.genre"/>
+    Band genre:
+    <select [(ngModel)]="band.genre">
+        <option *ngFor="let genre of genres" [value]="genre.id">{{genre.description}}</option>
+    </select>
 </div>
 
-{{band.name}}
+{{band.name}} {{band.genre}}

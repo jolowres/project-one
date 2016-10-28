@@ -1,22 +1,33 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {BandService} from "../../services/band/band.service";
 import {Band} from "../../models/band";
-
+import {RefData} from "../../models/ref-data";
+import {GenreService} from "../../services/reference-data/genre.service";
 
 @Component({
     selector: 'band',
-    providers: [ BandService ],
+    providers: [
+        BandService,
+        GenreService
+    ],
     moduleId: module.id,
     templateUrl: 'band.template.html'
 })
 
 export class BandComponent implements OnInit{
-    constructor () {}
+    constructor (
+        private _bandService: BandService,
+        private _genreService: GenreService
+    ) {}
 
     @Input() band: Band;
+    genres: RefData[];
 
     ngOnInit(): void {
         this.band = new Band();
+        this._genreService.getGenres().subscribe(()=> {
+            this.genres = this._genreService.genres;
+        });
     }
 
     //TODO save button add band
