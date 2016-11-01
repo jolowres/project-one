@@ -7,8 +7,8 @@ import {GenreService} from "../../services/reference-data/genre.service";
 @Component({
     selector: 'band',
     providers: [
-        BandService,
-        GenreService
+        BandService
+        //GenreService provided by app component
     ],
     moduleId: module.id,
     templateUrl: 'band.template.html'
@@ -25,12 +25,12 @@ export class BandComponent implements OnInit{
 
     ngOnInit(): void {
         this.band = new Band();
-        this._genreService.getGenres().subscribe(()=> {
-            this.genres = this._genreService.genres;
-        });
+        this.genres = this._genreService.genres;
+        //this._genreService.getGenres().subscribe(()=> {
+        //    this.genres = this._genreService.genres;
+        //});
     }
 
     //TODO save button add band
 
 }
-

@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { Urls } from './constants/urls.constants';
-import { GenreService } from './services/reference-data/genre.service';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HomeComponent } from './components/home/home.component';
@@ -47,8 +46,7 @@ import { NavBarLink } from './models/nav-bar-link';
         BandComponent
     ],
     providers: [
-        Urls,
-        GenreService
+        Urls
     ],
     bootstrap: [AppComponent]
 })

@@ -2,6 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { Response, Http } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
 
+import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
@@ -17,10 +18,12 @@ export class GenreService{
 
     genres: RefData[];
 
-    public getGenres():Observable<void> {
-        return this._http
-            .get(this._urls.GENRES)
-            .map((response:Response) => {
+    public getGenres():Promise<void> {
+        console.log('loading genres');
+        return this._http.get(this._urls.GENRES)
+            .toPromise()
+            .then(response => {
+                console.log(response.json());
                 return this.genres = response.json();
             })
             .catch(this.handleError);
