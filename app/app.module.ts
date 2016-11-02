@@ -6,10 +6,15 @@ import { FormsModule } from '@angular/forms';
 
 import { Urls } from './constants/urls.constants';
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { HomeComponent } from './components/home/home.component';
-import { BandsComponent } from './components/bands/bands.component';
-import { BandComponent } from './components/band/band.component';
+
+import {
+    NavBarComponent,
+    HomeComponent,
+    BandsComponent,
+    BandComponent
+    } from './components/index';
+
+import { GenreService } from './services/index';
 
 import { NavBarLink } from './models/nav-bar-link';
 
@@ -46,7 +51,8 @@ import { NavBarLink } from './models/nav-bar-link';
         BandComponent
     ],
     providers: [
-        Urls
+        Urls,
+        GenreService
     ],
     bootstrap: [AppComponent]
 })

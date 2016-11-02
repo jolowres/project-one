@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { GenreService } from './services/reference-data/genre.service';
-
+import { GenreService } from './services/index';
 
 @Component({
     selector: 'my-app',
-    providers: [ GenreService ],
     template: `<nav-bar></nav-bar>
         <router-outlet></router-outlet>`
 })
