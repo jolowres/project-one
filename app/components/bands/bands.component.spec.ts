@@ -31,6 +31,7 @@ describe('BandsComponent Tests', () => {
 
     beforeEach(() => {
         mockBandService = new MockBandService();
+        mockBandService.bands = [mockBand];
     });
 
     beforeEach(() => {

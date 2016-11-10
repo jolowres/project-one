@@ -16,15 +16,20 @@ export class BandService {
     constructor(private _http: Http,
                 private _urls: Urls) { }
 
-    //TODO store the bands as an array here?
+    bands: Band[];
 
     getBands():Observable<Band[]> {
         return this._http
             .get(this._urls.BANDS)
             .map((response: Response) => {
-                return response.json();
+                return this.bands = response.json();
             })
             .catch(this.handleError);
+    }
+
+    addBand(band): void {
+        //TODO needs to save to the 'database' at the moment just cached and page is refreshed with new data it is lost
+        this.bands.push(band);
     }
 
     private handleError (error: any) {

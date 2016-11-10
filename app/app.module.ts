@@ -14,9 +14,10 @@ import {
     BandComponent
     } from './components/index';
 
-import { GenreService } from './services/index';
+import { GenreService, BandService } from './services/index';
 
 import { NavBarLink } from './models/nav-bar-link';
+
 
 @NgModule({
     imports: [
@@ -52,7 +53,8 @@ import { NavBarLink } from './models/nav-bar-link';
     ],
     providers: [
         Urls,
-        GenreService
+        GenreService,
+        BandService
     ],
     bootstrap: [AppComponent]
 })

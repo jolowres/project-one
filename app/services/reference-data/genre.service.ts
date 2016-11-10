@@ -19,11 +19,9 @@ export class GenreService{
     genres: RefData[];
 
     public getGenres():Promise<void> {
-        console.log('loading genres');
         return this._http.get(this._urls.GENRES)
             .toPromise()
             .then(response => {
-                console.log(response.json());
                 return this.genres = response.json();
             })
             .catch(this.handleError);

@@ -7,7 +7,6 @@ import { BandService } from '../../services/band/band.service';
 
 @Component({
     selector: 'bands',
-    providers: [ BandService ],
     moduleId: module.id,
     templateUrl: 'bands.template.html',
     styleUrls: [ 'bands.component.css' ]
@@ -21,16 +20,16 @@ export class BandsComponent {
     bands: Band[];
 
     getBands(): void {
-        //this._bandService.getBands().then(data => this.bands = data);
         this._bandService.getBands()
-            .subscribe((bands) => this.bands = bands);
+            .subscribe(() => this.bands = this._bandService.bands);
     }
 
-    buttonClick(): void {
+    addBand(): void {
         this._router.navigate(['../band']);
     }
 
     ngOnInit(): void {
+        console.log('initiating bands component');
         this.getBands();
     }
 }
