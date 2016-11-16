@@ -4,9 +4,7 @@ import { HttpModule }    from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { Urls } from './constants/urls.constants';
 import { AppComponent } from './app.component';
-
 import {
     NavBarComponent,
     HomeComponent,
@@ -14,9 +12,7 @@ import {
     BandComponent
     } from './components/index';
 
-import { GenreService, BandService } from './services/index';
-
-import { NavBarLink } from './models/nav-bar-link';
+import { APP_PROVIDERS } from './app.providers';
 
 
 @NgModule({
@@ -52,9 +48,7 @@ import { NavBarLink } from './models/nav-bar-link';
         BandComponent
     ],
     providers: [
-        Urls,
-        GenreService,
-        BandService
+        APP_PROVIDERS
     ],
     bootstrap: [AppComponent]
 })

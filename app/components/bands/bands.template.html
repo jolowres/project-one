@@ -1,8 +1,12 @@
 <h1>List of bands</h1>
 
 <ul *ngFor="let band  of bands" class="bands">
-    <li> {{band.name}}</li>
+    <li on-mouseover="showBandDetails(band)" on-mouseout="hideBandDetails()"> {{band.name}}</li>
 </ul>
+
+<div>
+    {{bandToShow.genre}}
+</div>
 
 <div>
     <button type="button" class="btn btn-primary" (click)="addBand()">Add a band</button>
